@@ -1,9 +1,19 @@
 import React from "react";
+import styled from "styled-components";
+import logo from "../assets/logo.png";
 
 const Header = () => {
-    return (
-        
-    );
-}
+  return (
+    <HeaderDiv>
+      <Image src={logo}></Image>
+    </HeaderDiv>
+  );
+};
 
-export default Header
+const HeaderDiv = styled.div``;
+
+const Image = styled.img`
+  width: 700px;
+`;
+
+export default Header;

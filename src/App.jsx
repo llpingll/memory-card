@@ -1,16 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
   return (
     <>
-      {/* <Header />
-      <Main />
-      <Footer /> */}
+      <Header />
     </>
   );
-}
+};
 
 export default App;
