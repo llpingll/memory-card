@@ -11,9 +11,16 @@ const Globalstyle = createGlobalStyle`
   }
 
   html {
+    /* font-size: 62.5%; */
     min-height: 100%;
-    border: 2px solid red;
+    position: relative;
   }
+
+  body {
+    font-family: "Nunito", sans-serif;
+    background-color: ${({ theme }) => theme.colors.light};
+    border: 2px solid red;
+    }
 `;
 
 export default Globalstyle;
