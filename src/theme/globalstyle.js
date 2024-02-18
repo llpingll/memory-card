@@ -11,16 +11,23 @@ const Globalstyle = createGlobalStyle`
   }
 
   html {
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
+    line-height: 1.6;
     min-height: 100%;
+    /* For footer placement */
     position: relative;
   }
 
   body {
     font-family: "Nunito", sans-serif;
+    font-size: 1.6rem;
     background-color: ${({ theme }) => theme.colors.light};
     border: 2px solid red;
-    }
+  }
+
+  header {
+    /* font-size: 3rem; */
+  }
 `;
 
 export default Globalstyle;
