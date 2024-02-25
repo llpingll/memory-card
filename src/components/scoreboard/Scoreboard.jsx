@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const Scoreboard = ({ currentScore, bestScore }) => {
@@ -12,10 +11,9 @@ const Scoreboard = ({ currentScore, bestScore }) => {
 
 const ScoreContainer = styled.div`
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
+  align-items: center;
+  justify-content: space-around;
   width: 69rem;
-  border: green solid 2px;
 
   @media (max-width: 750px) {
     flex-direction: column;
