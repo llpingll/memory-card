@@ -1,6 +1,7 @@
 import Scoreboard from "./scoreboard/Scoreboard";
 import styled from "styled-components";
 import Cardsgrid from "./cards/Cardsgrid";
+import { shuffleCards, capitalise1stLetter } from "../utilities";
 import { useEffect, useState } from "react";
 
 const Main = () => {
@@ -12,7 +13,7 @@ const Main = () => {
 
   useEffect(() => {
     const loadPokemon = async () => {
-      setPokemons(await getPokemon());
+      setPokemons(shuffleCards(await getPokemon()));
     };
 
     loadPokemon();
@@ -24,7 +25,7 @@ const Main = () => {
     for (let i = 1; i <= NumberOfPokemon; i++) {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`);
       const pokemon = await response.json();
-      const name = pokemon.name;
+      const name = capitalise1stLetter(pokemon.name);
       const id = pokemon.id;
       const sprite = pokemon.sprites.front_default;
 
@@ -41,10 +42,9 @@ const Main = () => {
     } else {
       setClickedPokemon([...clickedPokemon, pokemon]);
       setCurrentScore((current) => current + 1);
-      if (bestScore < currentScore) {
-        setBestScore(currentScore);
-      }
+      if (bestScore === currentScore) setBestScore(bestScore + 1);
     }
+    setPokemons(shuffleCards(pokemons));
   };
 
   return (

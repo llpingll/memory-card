@@ -22,11 +22,6 @@ const Globalstyle = createGlobalStyle`
     font-family: "Nunito", sans-serif;
     font-size: 1.6rem;
     background-color: ${({ theme }) => theme.colors.light};
-    border: 2px solid red;
-  }
-
-  header {
-    /* font-size: 3rem; */
   }
 `;
 

@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-const Card = ({ pokemon }) => {
+const Card = ({ pokemon, playRound }) => {
   return (
-    <CardContainer>
+    <CardContainer
+      onClick={() => {
+        playRound(pokemon);
+      }}
+    >
       <Image src={pokemon.sprite}></Image>
       <Name>{pokemon.name}</Name>
     </CardContainer>

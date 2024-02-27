@@ -6,7 +6,7 @@ const Cardsgrid = ({ pokemons, playRound }) => {
     <GridContainer>
       {pokemons &&
         pokemons.map((pokemon) => (
-          <Card pokemon={pokemon} key={pokemon.id}></Card>
+          <Card pokemon={pokemon} key={pokemon.id} playRound={playRound}></Card>
         ))}
     </GridContainer>
   );
